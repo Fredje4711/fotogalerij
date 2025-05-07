@@ -6,14 +6,13 @@
     <title>Mijn Foto Gallerij</title>
 
     <!-- Lightgallery CSS -->
-    <!-- Gebruik de gebundelde CSS die je hebt: -->
     <link rel="stylesheet" href="lightgallery/css/lightgallery-bundle.min.css">
 
-    <!-- Als de bundle niet alles bevat, en je hebt aparte plugin CSS: -->
-    <!-- Controleer of je deze nog nodig hebt met de bundle. Waarschijnlijk niet. -->
-    <!-- <link rel="stylesheet" href="lightgallery/css/lg-thumbnail.css"> -->
-    <!-- <link rel="stylesheet" href="lightgallery/css/lg-zoom.css"> -->
-    <!-- <link rel="stylesheet" href="lightgallery/css/lg-medium-zoom.css"> --> <!-- Nieuwe plugin die je hebt -->
+    <!-- Optioneel: Als de bundle niet alle plugin CSS bevat en je merkt problemen,
+         kun je proberen deze weer te activeren. Controleer je lightgallery/css map.
+    <link rel="stylesheet" href="lightgallery/css/lg-thumbnail.css">
+    <link rel="stylesheet" href="lightgallery/css/lg-zoom.css">
+    -->
 
     <!-- Jouw eigen stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -29,9 +28,9 @@
 
             <!-- Foto 1: wddhasselt -->
             <a class="gallery-item"
-               href="images/full/wddhasselt.jpg"  <!-- Spaties verwijderd, klopt met je structuur -->
+               href="images/full/wddhasselt.jpg"
                data-sub-html="<h4>Werelddovendag Hasselt</h4><p>Een impressie van WDD in Hasselt.</p>">
-                <img src="images/thumbnails/wddhasselt_thumb.png" alt="Werelddovendag Hasselt" loading="lazy"> <!-- Spaties verwijderd -->
+                <img src="images/thumbnails/wddhasselt_thumb.png" alt="Werelddovendag Hasselt" loading="lazy">
                 <div class="download-overlay">
                     <span class="download-icon">⬇</span>
                 </div>
@@ -39,9 +38,9 @@
 
             <!-- Foto 2: wddtongeren -->
             <a class="gallery-item"
-               href="images/full/wddtongeren.jpg" <!-- Spaties verwijderd -->
+               href="images/full/wddtongeren.jpg"
                data-sub-html="<h4>Werelddovendag Tongeren</h4><p>Sfeerbeelden van WDD in Tongeren.</p>">
-                <img src="images/thumbnails/wddtongeren_thumb.png" alt="Werelddovendag Tongeren" loading="lazy"> <!-- Spaties verwijderd -->
+                <img src="images/thumbnails/wddtongeren_thumb.png" alt="Werelddovendag Tongeren" loading="lazy">
                 <div class="download-overlay">
                      <span class="download-icon">⬇</span>
                 </div>
@@ -57,20 +56,23 @@
                 </div>
             </a>
 
+            <!-- Voeg hier meer foto's toe als je er meer hebt, volgens hetzelfde patroon -->
+
         </div>
     </main>
 
     <footer>
-        <p>© 2024 Jouw Naam</p> <!-- Jaartal bijgewerkt -->
+        <p>© 2024 Jouw Naam</p> <!-- Pas jaartal en naam aan indien nodig -->
     </footer>
 
     <!-- Core Lightgallery JS -->
     <script src="lightgallery/js/lightgallery.min.js"></script>
 
-    <!-- Plugin JS - namen komen overeen met je structuur -->
+    <!-- Plugin JS - zorg dat deze overeenkomen met wat je in lightgallery/plugins hebt -->
     <script src="lightgallery/plugins/lg-thumbnail.min.js"></script>
     <script src="lightgallery/plugins/lg-zoom.min.js"></script>
-    <!-- <script src="lightgallery/plugins/lg-medium-zoom.min.js"></script> --> <!-- Je hebt deze, optioneel om te gebruiken -->
+    <!-- Als je lg-medium-zoom wilt gebruiken, wissel deze dan met lg-zoom.min.js en pas script.js aan -->
+    <!-- <script src="lightgallery/plugins/lg-medium-zoom.min.js"></script> -->
 
     <!-- Jouw eigen script -->
     <script src="script.js"></script>
