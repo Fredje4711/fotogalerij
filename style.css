@@ -6,7 +6,7 @@
     --text-color-on-primary: #ffffff;
     --background-color: #f4f7f6; /* Lichte achtergrond */
     --card-background: #ffffff;
-    --text-color: #333333;
+    --text-color: #333333;     /* Standaard donkere tekstkleur */
     --border-color: #e0e0e0;
 }
 
@@ -18,24 +18,31 @@ body {
     line-height: 1.6;
 }
 
+/* AANGEPAST: Header styling voor "Ledenfeest 2024" */
 header {
-    background-color: var(--primary-color);
-    color: var(--text-color-on-primary);
-    padding: 20px;
+    background-color: #ffffff; /* Witte achtergrond voor de header sectie */
+    padding: 25px 20px;        /* Ruimte boven/onder de titel */
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Optioneel: subtiele schaduw */
+    /* border-bottom: 1px solid var(--border-color); */ /* Optioneel: lichte lijn onder header */
 }
 
 header h1 {
+    color: #23a9e4; /* Titel "Ledenfeest 2024" in blauw (#23a9e4) */
     margin: 0;
-    font-size: 2em;
+    font-size: 2.2em;          /* Aangepaste grootte, pas aan naar wens */
+    font-weight: bold;         /* Maak het vet */
 }
 
+/* Verwijderd of aangepast: header p styling als die niet meer relevant is voor de nieuwe header */
+/* Als je nog een <p> subtitel direct onder de h1 in de header hebt: */
+/*
 header p {
-    margin: 5px 0 0;
+    margin: 8px 0 0;
     font-size: 1em;
-    color: var(--primary-color-lighter);
+    color: #555555; // Donkergrijs voor subtitel op witte achtergrond
 }
+*/
 
 main {
     padding: 20px;
@@ -45,19 +52,18 @@ main {
 
 .gallery {
     display: grid;
-    /* Responsive grid: min 150px breed, zoveel mogelijk kolommen als passen */
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px; /* Ruimte tussen de foto's */
+    gap: 15px;
 }
 
 .gallery-item {
     display: block;
-    position: relative; /* Voor de download overlay */
-    overflow: hidden; /* Zorgt dat de afbeelding netjes binnen het vierkant blijft */
+    position: relative;
+    overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: var(--card-background); /* Achtergrond voor als afbeelding niet laadt */
+    background-color: var(--card-background);
 }
 
 .gallery-item:hover {
@@ -68,14 +74,14 @@ main {
 .gallery-item img {
     display: block;
     width: 100%;
-    height: 100%; /* Maakt de afbeelding de hoogte van de container */
-    object-fit: cover; /* Zorgt dat de afbeelding het kader vult en bijsnijdt indien nodig */
-    aspect-ratio: 1 / 1; /* Maakt de items vierkant */
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
     transition: opacity 0.3s ease;
 }
 
 .gallery-item:hover img {
-    opacity: 0.8; /* Lichte fade op hover */
+    opacity: 0.8;
 }
 
 .download-overlay {
@@ -84,29 +90,29 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Donkere overlay */
+    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Standaard onzichtbaar */
+    opacity: 0;
     transition: opacity 0.3s ease;
-    pointer-events: none; /* Zorgt dat je nog steeds op de afbeelding kunt klikken voor lightbox */
+    pointer-events: none;
 }
 
 .gallery-item:hover .download-overlay {
-    opacity: 1; /* Zichtbaar op hover van gallery-item */
+    opacity: 1;
 }
 
 .download-icon {
     color: white;
-    font-size: 2.5em; /* Grootte van het download icoon */
+    font-size: 2.5em;
     text-shadow: 0 0 5px black;
 }
 
-/* Lightgallery custom download button (als je die instelt via JS) */
+/* Lightgallery custom download button */
 .lg-toolbar .lg-download {
-    background-color: var(--primary-color) !important; /* Forceer kleur */
-    color: var(--text-color-on-primary) !important; /* Stond al, maar voor de zekerheid expliciet voor download icoon */
+    background-color: var(--primary-color) !important;
+    color: var(--text-color-on-primary) !important;
     border-radius: 4px;
     margin: 5px;
 }
@@ -114,22 +120,23 @@ main {
     background-color: var(--primary-color-darker) !important;
 }
 
+/* AANGEPAST: Footer styling */
 footer {
     text-align: center;
     padding: 20px;
     margin-top: 30px;
-    background-color: #333;
-    color: #f4f4f4;
+    background-color: var(--primary-color); /* Footer achtergrond blauw (#23a9e4) */
+    color: var(--text-color-on-primary);    /* Footer tekst wit (#ffffff) */
     font-size: 0.9em;
 }
 
-/* Media Query voor grotere schermen (bijv. tablets en desktops) */
+/* Media Query voor grotere schermen */
 @media (min-width: 600px) {
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 20px;
     }
-    header h1 {
+    header h1 { /* Pas de grootte van de header titel aan voor grotere schermen indien nodig */
         font-size: 2.5em;
     }
 }
@@ -140,63 +147,61 @@ footer {
     }
 }
 
-/* Styling voor lightgallery zelf (pas aan naar wens) */
+/* Styling voor lightgallery zelf */
 .lg-backdrop {
-    background-color: rgba(20, 20, 25, 0.95); /* Donkerdere achtergrond voor lightbox */
+    background-color: rgba(20, 20, 25, 0.95);
 }
 .lg-toolbar {
-    background-color: rgba(35, 169, 228, 0.8); /* Toolbar met jouw kleur, licht transparant */
+    background-color: rgba(35, 169, 228, 0.8); /* Blauwe toolbar achtergrond */
 }
+
+/* AANGEPAST: Lightgallery sub-HTML (tekst onder foto in lightbox) */
 .lg-sub-html {
-    background-color: rgba(35, 169, 228, 0.8);
-    color: var(--text-color-on-primary);
+    background-color: var(--primary-color); /* Solide blauwe achtergrond (#23a9e4) */
+    /* OF background-color: rgba(35, 169, 228, 0.85); voor licht transparant blauw */
+    color: #ffffff !important;             /* Witte tekst, geforceerd */
     padding: 10px 20px;
+    text-align: center; /* Optioneel: centreer de tekst */
 }
 .lg-sub-html h4 {
     margin-top: 0;
-    margin-bottom: 5px;
-    color: var(--text-color-on-primary);
+    margin-bottom: 8px; /* Iets meer ruimte */
+    color: #ffffff !important;             /* Witte tekst voor titel, geforceerd */
+    font-size: 1.1em;   /* Iets groter */
 }
-.lg-sub-html p {
+.lg-sub-html p { /* Als je <p> tags gebruikt in data-sub-html */
     margin-bottom: 0;
     font-size: 0.9em;
+    color: #ffffff !important;             /* Witte tekst voor paragraaf, geforceerd */
 }
-.lg-actions .lg-next, .lg-actions .lg-prev {
-    background-color: transparent; /* Maak ze transparant om de kleur van de toolbar te gebruiken */
+
+/* Navigatiepijlen in lightbox zelf (naast de foto) */
+.lg-actions .lg-next,
+.lg-actions .lg-prev {
+    background-color: transparent;
 }
-.lg-actions .lg-next:hover, .lg-actions .lg-prev:hover {
+.lg-actions .lg-next:hover,
+.lg-actions .lg-prev:hover {
     background-color: rgba(255,255,255,0.1);
 }
 
-/* NIEUWE CSS VOOR WITTE TOOLBAR ITEMS */
-/* ===================================== */
-
-/* Algemeen voor alle items in de toolbar (teller, iconen) */
+/* CSS VOOR WITTE TOOLBAR ITEMS (knoppen en teller in lightbox toolbar) */
 .lg-toolbar .lg-icon,
 .lg-toolbar .lg-counter {
-    color: #ffffff !important; /* Wit, !important om eventuele specificiteit te overschrijven */
-    opacity: 0.85; /* Optioneel: lichte transparantie voor een subtieler effect */
+    color: #ffffff !important;
+    opacity: 0.85;
     transition: opacity 0.2s ease;
 }
-
-/* Hover state voor iconen en teller (iets helderder) */
 .lg-toolbar .lg-icon:hover,
-.lg-toolbar .lg-counter:hover { /* Counter heeft meestal geen hover, maar voor de zekerheid */
+.lg-toolbar .lg-counter:hover {
     opacity: 1;
 }
-
-/* Specifiek voor de download knop, als deze een andere kleur heeft gekregen door een eerdere regel */
-/* .lg-toolbar .lg-download is al hierboven gestyled met achtergrond, maar we zorgen dat het icoon zelf ook wit is */
-.lg-toolbar .lg-download .lg-icon { /* Specifieker voor het icoon binnen de download knop */
+.lg-toolbar .lg-download .lg-icon {
     color: #ffffff !important;
 }
-
-
-/* Close button icon (X) */
-/* Lightgallery gebruikt vaak een :before of :after voor het X-icoon, of direct een .lg-icon */
-.lg-toolbar .lg-close.lg-icon, /* Als het X-icoon direct een .lg-icon is */
-.lg-toolbar .lg-close:before,   /* Mogelijke selector voor X-icoon */
-.lg-toolbar .lg-close:after {    /* Mogelijke selector voor X-icoon */
+.lg-toolbar .lg-close.lg-icon,
+.lg-toolbar .lg-close:before,
+.lg-toolbar .lg-close:after {
     color: #ffffff !important;
     opacity: 0.85;
 }
@@ -205,11 +210,9 @@ footer {
 .lg-toolbar .lg-close:hover:after {
     opacity: 1;
 }
-
-/* Navigatiepijlen (vorige/volgende) in de lightbox zelf (niet in toolbar) */
 .lg-actions .lg-next .lg-icon,
 .lg-actions .lg-prev .lg-icon {
-    color: #ffffff !important; /* Maak deze ook wit */
+    color: #ffffff !important;
     opacity: 0.8;
 }
 .lg-actions .lg-next:hover .lg-icon,
@@ -217,19 +220,21 @@ footer {
     opacity: 1;
 }
 
-/* Thumbnails in de lightbox (als je de thumbnail balk onderaan gebruikt) */
-/* Dit is optioneel en beïnvloedt de kleine thumbnails onderaan de lightbox */
+/* Verberg Lightgallery vorige/volgende pijlen ALLEEN op mobiele schermen */
+@media (max-width: 767px) {
+    .lg-actions .lg-next,
+    .lg-actions .lg-prev {
+        display: none !important;
+    }
+}
+
+/* Verwijderde sectie voor thumbnails in lightbox, tenzij je die specifiek wilt stylen */
 /*
 .lg-outer .lg-thumb-item {
     border-color: #ffffff;
 }
 .lg-outer .lg-thumb-item.active {
     border-color: var(--primary-color-lighter);
-}
-/* Verberg de vorige/volgende navigatiepijlen in Lightgallery */
-.lg-actions .lg-next,
-.lg-actions .lg-prev {
-    display: none !important;
 }
 */
 // --- END OF FILE style.css ---
