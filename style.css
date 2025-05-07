@@ -226,5 +226,10 @@ footer {
 .lg-outer .lg-thumb-item.active {
     border-color: var(--primary-color-lighter);
 }
+/* Verberg de vorige/volgende navigatiepijlen in Lightgallery */
+.lg-actions .lg-next,
+.lg-actions .lg-prev {
+    display: none !important;
+}
 */
 // --- END OF FILE style.css ---

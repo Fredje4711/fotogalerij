@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Specifieke instellingen voor mobiel
             mobileSettings: {
-               controls: true,       // Zorgt ervoor dat de toolbar (met knoppen) getoond wordt
+               controls: false,       // Zorgt ervoor dat de toolbar (met knoppen) getoond wordt
                showCloseIcon: true,  // Forceer het tonen van het sluitkruisje
                download: true        // Forceer het tonen van de downloadknop
             }
