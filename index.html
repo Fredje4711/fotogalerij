@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mijn Foto Gallerij</title>
-    <link rel="stylesheet" href="lightgallery/css/lightgallery.min.css">
-    <!-- Optionele plugins CSS (indien je ze gebruikt en hebt) -->
-    <!-- <link rel="stylesheet" href="lightgallery/css/lg-thumbnail.min.css"> -->
-    <!-- <link rel="stylesheet" href="lightgallery/css/lg-zoom.min.css"> -->
+
+    <!-- Lightgallery CSS -->
+    <!-- Gebruik de gebundelde CSS die je hebt: -->
+    <link rel="stylesheet" href="lightgallery/css/lightgallery-bundle.min.css">
+
+    <!-- Als de bundle niet alles bevat, en je hebt aparte plugin CSS: -->
+    <!-- Controleer of je deze nog nodig hebt met de bundle. Waarschijnlijk niet. -->
+    <!-- <link rel="stylesheet" href="lightgallery/css/lg-thumbnail.css"> -->
+    <!-- <link rel="stylesheet" href="lightgallery/css/lg-zoom.css"> -->
+    <!-- <link rel="stylesheet" href="lightgallery/css/lg-medium-zoom.css"> --> <!-- Nieuwe plugin die je hebt -->
+
+    <!-- Jouw eigen stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,80 +26,53 @@
 
     <main>
         <div id="lightgallery" class="gallery">
-            <!-- ================================================================== -->
-            <!-- START FOTO 1                                                       -->
-            <!-- VERVANG DE BESTANDSNAMEN HIERONDER DOOR JOUW ECHTE BESTANDSNAMEN   -->
-            <!-- ================================================================== -->
+
+            <!-- Foto 1: wddhasselt -->
             <a class="gallery-item"
-               href="images/full/jouw-echte-foto-01_volledig.jpg"  <!-- PAD NAAR JOUW VOLLEDIGE AFBEELDING 1 -->
-               data-sub-html="<h4>Titel van Foto 1</h4><p>Een korte beschrijving van foto 1, als je wilt.</p>">
-                <img src="images/thumbnails/jouw-echte-foto-01_thumb.jpg" alt="Beschrijving Foto 1" loading="lazy"> <!-- PAD NAAR JOUW THUMBNAIL 1 -->
+               href="images/full/wddhasselt.jpg"  <!-- Spaties verwijderd, klopt met je structuur -->
+               data-sub-html="<h4>Werelddovendag Hasselt</h4><p>Een impressie van WDD in Hasselt.</p>">
+                <img src="images/thumbnails/wddhasselt_thumb.png" alt="Werelddovendag Hasselt" loading="lazy"> <!-- Spaties verwijderd -->
                 <div class="download-overlay">
                     <span class="download-icon">⬇</span>
                 </div>
             </a>
-            <!-- EINDE FOTO 1 -->
 
-            <!-- ================================================================== -->
-            <!-- START FOTO 2                                                       -->
-            <!-- VERVANG DE BESTANDSNAMEN HIERONDER DOOR JOUW ECHTE BESTANDSNAMEN   -->
-            <!-- ================================================================== -->
+            <!-- Foto 2: wddtongeren -->
             <a class="gallery-item"
-               href="images/full/een-andere-coole-foto_volledig.png" <!-- PAD NAAR JOUW VOLLEDIGE AFBEELDING 2 (kan .png, .jpeg etc. zijn) -->
-               data-sub-html="<h4>Titel Foto 2</h4><p>Mooie zonsondergang of wat dan ook.</p>">
-                <img src="images/thumbnails/een-andere-coole-foto_thumb.png" alt="Beschrijving Foto 2" loading="lazy"> <!-- PAD NAAR JOUW THUMBNAIL 2 -->
+               href="images/full/wddtongeren.jpg" <!-- Spaties verwijderd -->
+               data-sub-html="<h4>Werelddovendag Tongeren</h4><p>Sfeerbeelden van WDD in Tongeren.</p>">
+                <img src="images/thumbnails/wddtongeren_thumb.png" alt="Werelddovendag Tongeren" loading="lazy"> <!-- Spaties verwijderd -->
                 <div class="download-overlay">
                      <span class="download-icon">⬇</span>
                 </div>
             </a>
-            <!-- EINDE FOTO 2 -->
 
-            <!-- ================================================================== -->
-            <!-- START FOTO 3                                                       -->
-            <!-- VERVANG DE BESTANDSNAMEN HIERONDER DOOR JOUW ECHTE BESTANDSNAMEN   -->
-            <!-- ================================================================== -->
+            <!-- Foto 3: fietstocht -->
             <a class="gallery-item"
-               href="images/full/vakantiefoto_strand_groot.jpeg" <!-- PAD NAAR JOUW VOLLEDIGE AFBEELDING 3 -->
-               data-sub-html="<h4>Stranddag</h4>"> <!-- Korte titel is ook prima -->
-                <img src="images/thumbnails/vakantiefoto_strand_klein.jpeg" alt="Beschrijving Foto 3" loading="lazy"> <!-- PAD NAAR JOUW THUMBNAIL 3 -->
+               href="images/full/fietstocht.jpg"
+               data-sub-html="<h4>Fietstocht Herinneringen</h4><p>Mooie momenten tijdens de fietstocht.</p>">
+                <img src="images/thumbnails/fietstocht_thumb.png" alt="Fietstocht" loading="lazy">
                 <div class="download-overlay">
                     <span class="download-icon">⬇</span>
                 </div>
             </a>
-            <!-- EINDE FOTO 3 -->
-
-            <!-- ================================================================== -->
-            <!-- VOEG HIER DE VOLGENDE 47 FOTO'S TOE OP DEZELFDE MANIER             -->
-            <!--                                                                    -->
-            <!-- Voorbeeld voor foto 4 (VERGEET NIET DE BESTANDSNAMEN AAN TE PASSEN): -->
-            <!--
-            <a class="gallery-item"
-               href="images/full/jouw-foto-naam-04_groot.jpg"
-               data-sub-html="<h4>Foto 4 Titel</h4>">
-                <img src="images/thumbnails/jouw-foto-naam-04_klein.jpg" alt="Beschrijving Foto 4" loading="lazy">
-                <div class="download-overlay">
-                    <span class="download-icon">⬇</span>
-                </div>
-            </a>
-            -->
-            <!-- ... herhaal tot je 50 foto's hebt ...                               -->
-            <!-- Zorg ervoor dat ELKE 'href' en 'src' verwijst naar JOUW ECHTE     -->
-            <!-- bestandsnamen en dat die bestanden ook daadwerkelijk in de mappen -->
-            <!-- 'images/full/' en 'images/thumbnails/' staan in je GitHub repo.   -->
-            <!-- LET OP HOOFDLETTERGEVOELIGHEID!                                    -->
-            <!-- ================================================================== -->
 
         </div>
     </main>
 
     <footer>
-        <p>© 2023 Jouw Naam</p>
+        <p>© 2024 Jouw Naam</p> <!-- Jaartal bijgewerkt -->
     </footer>
 
+    <!-- Core Lightgallery JS -->
     <script src="lightgallery/js/lightgallery.min.js"></script>
-    <!-- Optionele plugins JS (zorg dat de bestanden in lightgallery/plugins/ staan als je ze gebruikt) -->
+
+    <!-- Plugin JS - namen komen overeen met je structuur -->
     <script src="lightgallery/plugins/lg-thumbnail.min.js"></script>
     <script src="lightgallery/plugins/lg-zoom.min.js"></script>
+    <!-- <script src="lightgallery/plugins/lg-medium-zoom.min.js"></script> --> <!-- Je hebt deze, optioneel om te gebruiken -->
+
+    <!-- Jouw eigen script -->
     <script src="script.js"></script>
 </body>
 </html>
