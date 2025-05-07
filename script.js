@@ -1,8 +1,9 @@
+// --- START OF FILE script.js ---
 document.addEventListener('DOMContentLoaded', function() {
     const galleryContainer = document.getElementById('lightgallery');
     if (galleryContainer) {
         lightGallery(galleryContainer, {
-            plugins: [lgZoom, lgThumbnail], // Activeer plugins
+            plugins: [lgZoom, lgThumbnail], // Activeer plugins, zorg dat lgZoom en lgThumbnail globaal beschikbaar zijn
             selector: '.gallery-item',      // Zegt lightgallery welke items te gebruiken
             speed: 500,                     // Animatie snelheid
             download: true,                 // Toon download knop in lightbox toolbar
@@ -10,11 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // enableSwipe: true, (standaard aan)
             // enableDrag: true, (standaard aan)
             // mode: 'lg-fade', // Bijv. 'lg-slide', 'lg-fade', 'lg-zoom-in-out'
-            // mobileSettings: { // Specifieke instellingen voor mobiel indien nodig
-            //    controls: true,
-            //    showCloseIcon: true,
-            //    download: true
-            // }
+
+            // Specifieke instellingen voor mobiel
+            mobileSettings: {
+               controls: true,       // Zorgt ervoor dat de toolbar (met knoppen) getoond wordt
+               showCloseIcon: true,  // Forceer het tonen van het sluitkruisje
+               download: true        // Forceer het tonen van de downloadknop
+            }
             // ...meer opties zie documentatie: https://www.lightgalleryjs.com/docs/settings/
         });
     } else {
@@ -47,3 +50,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     */
 });
+// --- END OF FILE script.js ---

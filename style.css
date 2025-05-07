@@ -1,3 +1,4 @@
+// --- START OF FILE style.css ---
 :root {
     --primary-color: #23a9e4;
     --primary-color-darker: #1a8dba; /* Voor hover etc. */
@@ -105,7 +106,7 @@ main {
 /* Lightgallery custom download button (als je die instelt via JS) */
 .lg-toolbar .lg-download {
     background-color: var(--primary-color) !important; /* Forceer kleur */
-    color: var(--text-color-on-primary) !important;
+    color: var(--text-color-on-primary) !important; /* Stond al, maar voor de zekerheid expliciet voor download icoon */
     border-radius: 4px;
     margin: 5px;
 }
@@ -166,3 +167,64 @@ footer {
 .lg-actions .lg-next:hover, .lg-actions .lg-prev:hover {
     background-color: rgba(255,255,255,0.1);
 }
+
+/* NIEUWE CSS VOOR WITTE TOOLBAR ITEMS */
+/* ===================================== */
+
+/* Algemeen voor alle items in de toolbar (teller, iconen) */
+.lg-toolbar .lg-icon,
+.lg-toolbar .lg-counter {
+    color: #ffffff !important; /* Wit, !important om eventuele specificiteit te overschrijven */
+    opacity: 0.85; /* Optioneel: lichte transparantie voor een subtieler effect */
+    transition: opacity 0.2s ease;
+}
+
+/* Hover state voor iconen en teller (iets helderder) */
+.lg-toolbar .lg-icon:hover,
+.lg-toolbar .lg-counter:hover { /* Counter heeft meestal geen hover, maar voor de zekerheid */
+    opacity: 1;
+}
+
+/* Specifiek voor de download knop, als deze een andere kleur heeft gekregen door een eerdere regel */
+/* .lg-toolbar .lg-download is al hierboven gestyled met achtergrond, maar we zorgen dat het icoon zelf ook wit is */
+.lg-toolbar .lg-download .lg-icon { /* Specifieker voor het icoon binnen de download knop */
+    color: #ffffff !important;
+}
+
+
+/* Close button icon (X) */
+/* Lightgallery gebruikt vaak een :before of :after voor het X-icoon, of direct een .lg-icon */
+.lg-toolbar .lg-close.lg-icon, /* Als het X-icoon direct een .lg-icon is */
+.lg-toolbar .lg-close:before,   /* Mogelijke selector voor X-icoon */
+.lg-toolbar .lg-close:after {    /* Mogelijke selector voor X-icoon */
+    color: #ffffff !important;
+    opacity: 0.85;
+}
+.lg-toolbar .lg-close:hover.lg-icon,
+.lg-toolbar .lg-close:hover:before,
+.lg-toolbar .lg-close:hover:after {
+    opacity: 1;
+}
+
+/* Navigatiepijlen (vorige/volgende) in de lightbox zelf (niet in toolbar) */
+.lg-actions .lg-next .lg-icon,
+.lg-actions .lg-prev .lg-icon {
+    color: #ffffff !important; /* Maak deze ook wit */
+    opacity: 0.8;
+}
+.lg-actions .lg-next:hover .lg-icon,
+.lg-actions .lg-prev:hover .lg-icon {
+    opacity: 1;
+}
+
+/* Thumbnails in de lightbox (als je de thumbnail balk onderaan gebruikt) */
+/* Dit is optioneel en beïnvloedt de kleine thumbnails onderaan de lightbox */
+/*
+.lg-outer .lg-thumb-item {
+    border-color: #ffffff;
+}
+.lg-outer .lg-thumb-item.active {
+    border-color: var(--primary-color-lighter);
+}
+*/
+// --- END OF FILE style.css ---
