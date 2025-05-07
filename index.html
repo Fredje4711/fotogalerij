@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Foto Gallerij</title>
+    <link rel="stylesheet" href="lightgallery/css/lightgallery.min.css">
+    <!-- Optionele plugins CSS (indien nodig) -->
+    <!-- <link rel="stylesheet" href="lightgallery/css/lg-thumbnail.min.css"> -->
+    <!-- <link rel="stylesheet" href="lightgallery/css/lg-zoom.min.css"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mijn Fantastische Foto's</h1>
+        <p>Geoptimaliseerd voor mobiel, met download en swipe!</p>
+    </header>
+
+    <main>
+        <div id="lightgallery" class="gallery">
+            <!-- Herhaal dit blok voor elke foto -->
+            <a class="gallery-item" 
+               href="images/full/foto1_full.jpg" 
+               data-sub-html="<h4>Foto 1 Titel</h4><p>Een korte beschrijving van foto 1.</p>">
+                <img src="images/thumbnails/foto1_thumb.jpg" alt="Beschrijving Foto 1">
+                <div class="download-overlay">
+                    <span class="download-icon">⬇</span> <!-- Unicode download pijl -->
+                </div>
+            </a>
+            <!-- Einde herhaalblok -->
+
+            <a class="gallery-item" href="images/full/foto2_full.jpg" data-sub-html="<h4>Foto 2</h4><p>Mooie zonsondergang.</p>">
+                <img src="images/thumbnails/foto2_thumb.jpg" alt="Beschrijving Foto 2">
+                <div class="download-overlay">
+                     <span class="download-icon">⬇</span>
+                </div>
+            </a>
+            
+            <!-- Voeg hier de andere 48 foto's toe op dezelfde manier -->
+            <!-- Bijvoorbeeld: -->
+            <a class="gallery-item" href="images/full/foto3_full.jpg" data-sub-html="<h4>Foto 3</h4>">
+                <img src="images/thumbnails/foto3_thumb.jpg" alt="Beschrijving Foto 3">
+                <div class="download-overlay">
+                    <span class="download-icon">⬇</span>
+                </div>
+            </a>
+            <!-- ... tot 50 ... -->
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2023 Jouw Naam</p>
+    </footer>
+
+    <script src="lightgallery/js/lightgallery.min.js"></script>
+    <!-- Optionele plugins JS -->
+    <script src="lightgallery/plugins/lg-thumbnail.min.js"></script>
+    <script src="lightgallery/plugins/lg-zoom.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
