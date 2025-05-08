@@ -23,57 +23,28 @@
     </header>
 
     <main>
+        <!-- DEZE DIV IS NU LEEG - JAVASCRIPT GAAT DE INHOUD GENEREREN -->
         <div id="lightgallery" class="gallery">
-
-            <!-- Foto 1: wddhasselt -->
-            <a class="gallery-item"
-               href="images/full/wddhasselt.jpg"
-               data-sub-html="<h4>Wereld Diabetes Dag Jessa Hasselt 2024</h4>">
-                <img src="images/thumbnails/wddhasselt_thumb.png" alt="Werelddiabetesdag Jessa Hasselt 2024" loading="lazy">
-                <div class="download-overlay">
-                    <span class="download-icon">⬇</span>
-                </div>
-            </a>
-
-            <!-- Foto 2: wddtongeren -->
-            <a class="gallery-item"
-               href="images/full/wddtongeren.jpg"
-               data-sub-html="<h4>Wereld Diabetes Dag Vesalius Tongeren 2024</h4>">
-                <img src="images/thumbnails/wddtongeren_thumb.png" alt="Werelddiabetesdag Tongeren 2024" loading="lazy">
-                <div class="download-overlay">
-                     <span class="download-icon">⬇</span>
-                </div>
-            </a>
-
-            <!-- Foto 3: fietstocht -->
-            <a class="gallery-item"
-               href="images/full/fietstocht.jpg"
-               data-sub-html="<h4>Fietstocht Lieteberg September 2024</h4>">
-                <img src="images/thumbnails/fietstocht_thumb.png" alt="Fietstocht Lieteberg september 2024" loading="lazy">
-                <div class="download-overlay">
-                    <span class="download-icon">⬇</span>
-                </div>
-            </a>
-
-            <!-- Voeg hier meer foto's toe als je er meer hebt, volgens hetzelfde patroon -->
-
+            <!-- De <a class="gallery-item">...</a> blokken die hier stonden zijn verwijderd. -->
         </div>
     </main>
 
     <footer>
-        <p>© 2025 Diabetes Liga Midden-Limburg</p> <!-- Pas jaartal en naam aan indien nodig -->
+        <!-- Jaartal aangepast naar 2024 voor consistentie met titels, pas aan indien 2025 correct is. -->
+        <p>© 2024 Diabetes Liga Midden-Limburg</p>
     </footer>
 
-    <!-- Core Lightgallery JS -->
-    <script src="lightgallery/js/lightgallery.min.js"></script>
+    <!-- Scripts worden nu in een specifieke volgorde geladen -->
+    <!-- EERST gallery-data.js, zodat de 'photoGalleryData' array beschikbaar is -->
+    <script src="gallery-data.js"></script>
 
-    <!-- Plugin JS - zorg dat deze overeenkomen met wat je in lightgallery/plugins hebt -->
+    <!-- DAN de Lightgallery core en plugins -->
+    <script src="lightgallery/js/lightgallery.min.js"></script>
     <script src="lightgallery/plugins/lg-thumbnail.min.js"></script>
     <script src="lightgallery/plugins/lg-zoom.min.js"></script>
-    <!-- Als je lg-medium-zoom wilt gebruiken, wissel deze dan met lg-zoom.min.js en pas script.js aan -->
-    <!-- <script src="lightgallery/plugins/lg-medium-zoom.min.js"></script> -->
+    <!-- <script src="lightgallery/plugins/lg-medium-zoom.min.js"></script> --> <!-- Als je deze plugin gebruikt -->
 
-    <!-- Jouw eigen script -->
+    <!-- ALS LAATSTE jouw eigen script.js dat de data gebruikt en Lightgallery initialiseert -->
     <script src="script.js"></script>
 </body>
 </html>
