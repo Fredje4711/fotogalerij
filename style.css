@@ -1,4 +1,8 @@
-/* ALLEREERSTE REGELS IN STYLE.CSS - BRUTE FORCE TEST */
+// --- START OF FILE style.css ---
+
+/* ALLEREERSTE GELDIGE CSS REGELS - BRUTE FORCE TEST */
+/* Deze test is om te zien of CSS wijzigingen uberhaupt doorkomen op mobiel. */
+/* Als de pijlen verdwijnen OF gigantisch en felgekleurd worden, werkt de CSS-link. */
 .lg-actions .lg-next,
 .lg-actions .lg-prev {
     display: none !important;
@@ -9,7 +13,6 @@
     height: 200px !important;
 }
 
-// --- START OF FILE style.css ---
 :root {
     --primary-color: #23a9e4;
     --primary-color-darker: #1a8dba; /* Voor hover etc. */
@@ -187,6 +190,7 @@ footer {
 }
 
 /* Navigatiepijlen in lightbox zelf (naast de foto) */
+/* De 'brute force test' bovenaan zal deze overschrijven als die actief is */
 .lg-actions .lg-next,
 .lg-actions .lg-prev {
     background-color: transparent;
@@ -232,10 +236,12 @@ footer {
 }
 
 /* Verberg Lightgallery vorige/volgende pijlen ALLEEN op mobiele schermen */
+/* Deze media query is voor de normale werking (pijlen weg op mobiel, zichtbaar op desktop) */
+/* De 'brute force test' bovenaan zal deze overschrijven als de schermen smal zijn. */
 @media (max-width: 767px) {
     .lg-actions .lg-next,
     .lg-actions .lg-prev {
-        display: none !important;
+        display: none !important; /* Dit zou de 'brute force' test moeten versterken op mobiel */
     }
 }
 
