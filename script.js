@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             speed: 500,                     // Animatie snelheid
             download: true,                 // Toon download knop in lightbox toolbar
             getCaptionFromTitleOrAlt: false,// We gebruiken onze eigen data-sub-html
-            controls: true,                 // Toon desktop navigatiepijlen (links/rechts naast foto).
+            controls: false,                 // Toon desktop navigatiepijlen (links/rechts naast foto).
                                             // Zet op false als je ze ook op desktop weg wilt (media query in CSS regelt mobiel).
             mobileSettings: {
                controls: true,              // Toon de toolbar bovenaan op mobiel
