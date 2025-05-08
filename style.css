@@ -1,5 +1,22 @@
 // --- START OF FILE style.css ---
 
+body {
+    background-color: yellow !important;
+}
+
+/* HIERONDER DE BRUTE FORCE TEST VOOR DE PIJLEN (laat die ook nog even staan) */
+.lg-actions .lg-next,
+.lg-actions .lg-prev {
+    display: none !important;
+    background-color: lime !important;
+    border: 5px solid red !important;
+    z-index: 99999999 !important;
+    width: 200px !important;
+    height: 200px !important;
+}
+
+/* ... de rest van je style.css ... */
+
 /* ALLEREERSTE GELDIGE CSS REGELS - BRUTE FORCE TEST */
 /* Deze test is om te zien of CSS wijzigingen uberhaupt doorkomen op mobiel. */
 /* Als de pijlen verdwijnen OF gigantisch en felgekleurd worden, werkt de CSS-link. */
