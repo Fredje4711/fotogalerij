@@ -1,3 +1,14 @@
+/* ALLEREERSTE REGELS IN STYLE.CSS - BRUTE FORCE TEST */
+.lg-actions .lg-next,
+.lg-actions .lg-prev {
+    display: none !important;
+    background-color: lime !important; /* Maak ze felgroen als ze TOCH verschijnen */
+    border: 5px solid red !important;   /* En een rode rand */
+    z-index: 99999999 !important;       /* En zorg dat ze boven alles staan */
+    width: 200px !important;            /* Maak ze gigantisch */
+    height: 200px !important;
+}
+
 // --- START OF FILE style.css ---
 :root {
     --primary-color: #23a9e4;
