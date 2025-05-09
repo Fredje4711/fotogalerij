@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Foto Gallerij</title>
+
+    <!-- Lightgallery CSS -->
+    <link rel="stylesheet" href="lightgallery/css/lightgallery-bundle.min.css">
+
+    <!-- Optioneel: Als de bundle niet alle plugin CSS bevat en je merkt problemen,
+         kun je proberen deze weer te activeren. Controleer je lightgallery/css map.
+    <link rel="stylesheet" href="lightgallery/css/lg-thumbnail.css">
+    <link rel="stylesheet" href="lightgallery/css/lg-zoom.css">
+    -->
+
+    <!-- Jouw eigen stylesheet - MET CACHE BUSTING PARAMETER -->
+    <link rel="stylesheet" href="style.css?v=3"> <!-- <--- WIJZIGING HIER -->
+</head>
+<body>
+<!-- In templates/index_template.html -->
+<header>
+    <h1>Infosessie CardioVasculair 13-03-2025</h1> <!-- Placeholder voor de galerijtitel -->
+</header>
+    <main>
+        <!-- DEZE DIV IS NU LEEG - JAVASCRIPT GAAT DE INHOUD GENEREREN -->
+        <div id="lightgallery" class="gallery">
+            <!-- De <a class="gallery-item">...</a> blokken die hier stonden zijn verwijderd. -->
+        </div>
+    </main>
+
+    <footer>
+        <!-- Jaartal aangepast naar 2024 voor consistentie met titels, pas aan indien 2025 correct is. -->
+        <p>© 2024 Diabetes Liga Midden-Limburg</p>
+    </footer>
+
+    <!-- Scripts worden nu in een specifieke volgorde geladen -->
+    <!-- EERST gallery-data.js, zodat de 'photoGalleryData' array beschikbaar is -->
+    <script src="gallery-data.js"></script>
+
+    <!-- DAN de Lightgallery core en plugins -->
+    <script src="lightgallery/js/lightgallery.min.js"></script>
+    <script src="lightgallery/plugins/lg-thumbnail.min.js"></script>
+    <script src="lightgallery/plugins/lg-zoom.min.js"></script>
+    <!-- <script src="lightgallery/plugins/lg-medium-zoom.min.js"></script> --> <!-- Als je deze plugin gebruikt -->
+
+    <!-- ALS LAATSTE jouw eigen script.js dat de data gebruikt en Lightgallery initialiseert -->
+    <script src="script.js"></script>
+</body>
+</html>
