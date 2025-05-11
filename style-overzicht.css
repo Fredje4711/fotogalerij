@@ -1,0 +1,105 @@
+/* style-overzicht.css */
+
+:root { /* Je kunt dezelfde variabelen gebruiken of nieuwe definiëren */
+    --primary-color: #23a9e4;
+    --primary-color-darker: #1a8dba;
+    --text-color-on-primary: #ffffff;
+    --background-color-page: #f4f7f6;
+    --text-color-dark: #333333;
+    --text-color-light: #555555;
+    --card-background: #ffffff;
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    --border-radius: 8px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--background-color-page);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+}
+
+.overzicht-header { /* Aangepaste classnamen om conflicten te voorkomen */
+    background-color: var(--primary-color);
+    color: var(--text-color-on-primary);
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.overzicht-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.overzicht-main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: var(--text-color-light);
+}
+
+.galerij-navigatie ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.galerij-navigatie ul li {
+    margin-bottom: 20px;
+}
+
+.galerij-navigatie ul li a {
+    display: block;
+    background-color: var(--card-background);
+    color: var(--text-color-dark);
+    text-decoration: none;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.galerij-navigatie ul li a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+.galerij-titel {
+    display: block;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--primary-color-darker);
+    margin-bottom: 5px;
+}
+
+.galerij-beschrijving {
+    display: block;
+    font-size: 0.95em;
+    color: var(--text-color-light);
+}
+
+.overzicht-footer { /* Aangepaste classnaam */
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: var(--primary-color-darker);
+    color: var(--text-color-on-primary);
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .overzicht-header h1 { font-size: 1.8em; }
+    .overzicht-main { margin: 20px auto; padding: 15px; }
+    .galerij-navigatie ul li a { padding: 15px; }
+    .galerij-titel { font-size: 1.2em; }
+}
