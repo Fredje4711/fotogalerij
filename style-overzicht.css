@@ -23,7 +23,7 @@ body {
 .overzicht-header { /* Aangepaste classnamen om conflicten te voorkomen */
     background-color: var(--primary-color);
     color: var(--text-color-on-primary);
-    padding: 30px 20px;
+    padding: 10px 20px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -35,14 +35,14 @@ body {
 
 .overzicht-main {
     max-width: 900px;
-    margin: 30px auto;
-    padding: 20px;
+    margin: -10px auto;
+    padding: 0px;
 }
 
 .intro-text {
     text-align: center;
     font-size: 1.1em;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     color: var(--text-color-light);
 }
 
@@ -90,8 +90,8 @@ body {
 
 .overzicht-footer { /* Aangepaste classnaam */
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+    padding: 5px;
+    margin-top: 20px;
     background-color: var(--primary-color-darker);
     color: var(--text-color-on-primary);
     font-size: 0.9em;

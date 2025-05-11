@@ -52,7 +52,7 @@ body {
 /* AANGEPAST: Header styling voor "Ledenfeest 2024" */
 header {
     background-color: #ffffff; /* Witte achtergrond voor de header sectie */
-    padding: 25px 20px;        /* Ruimte boven/onder de titel */
+    padding: 0px 0px;        /* Ruimte boven/onder de titel */
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Optioneel: subtiele schaduw */
     /* border-bottom: 1px solid var(--border-color); */ /* Optioneel: lichte lijn onder header */
@@ -76,7 +76,7 @@ header p {
 */
 
 main {
-    padding: 20px;
+    padding: 5px;
     max-width: 1200px;
     margin: 0 auto;
 }
