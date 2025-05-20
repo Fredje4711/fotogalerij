@@ -1,0 +1,274 @@
+// --- START OF FILE style.css ---
+
+body {
+    background-color: yellow !important;
+}
+
+/* HIERONDER DE BRUTE FORCE TEST VOOR DE PIJLEN (laat die ook nog even staan) */
+.lg-actions .lg-next,
+.lg-actions .lg-prev {
+    display: none !important;
+    background-color: lime !important;
+    border: 5px solid red !important;
+    z-index: 99999999 !important;
+    width: 200px !important;
+    height: 200px !important;
+}
+
+/* ... de rest van je style.css ... */
+
+/* ALLEREERSTE GELDIGE CSS REGELS - BRUTE FORCE TEST */
+/* Deze test is om te zien of CSS wijzigingen uberhaupt doorkomen op mobiel. */
+/* Als de pijlen verdwijnen OF gigantisch en felgekleurd worden, werkt de CSS-link. */
+.lg-actions .lg-next,
+.lg-actions .lg-prev {
+    display: none !important;
+    background-color: lime !important; /* Maak ze felgroen als ze TOCH verschijnen */
+    border: 5px solid red !important;   /* En een rode rand */
+    z-index: 99999999 !important;       /* En zorg dat ze boven alles staan */
+    width: 200px !important;            /* Maak ze gigantisch */
+    height: 200px !important;
+}
+
+:root {
+    --primary-color: #23a9e4;
+    --primary-color-darker: #1a8dba; /* Voor hover etc. */
+    --primary-color-lighter: #5bc0f5;
+    --text-color-on-primary: #ffffff;
+    --background-color: #f4f7f6; /* Lichte achtergrond */
+    --card-background: #ffffff;
+    --text-color: #333333;     /* Standaard donkere tekstkleur */
+    --border-color: #e0e0e0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* AANGEPAST: Header styling voor "Ledenfeest 2024" */
+header {
+    background-color: #ffffff; /* Witte achtergrond voor de header sectie */
+    padding: 0px 0px;        /* Ruimte boven/onder de titel */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Optioneel: subtiele schaduw */
+    /* border-bottom: 1px solid var(--border-color); */ /* Optioneel: lichte lijn onder header */
+}
+
+header h1 {
+    color: #23a9e4; /* Titel "Ledenfeest 2024" in blauw (#23a9e4) */
+    margin: 0;
+    font-size: 2.2em;          /* Aangepaste grootte, pas aan naar wens */
+    font-weight: bold;         /* Maak het vet */
+}
+
+/* Verwijderd of aangepast: header p styling als die niet meer relevant is voor de nieuwe header */
+/* Als je nog een <p> subtitel direct onder de h1 in de header hebt: */
+/*
+header p {
+    margin: 8px 0 0;
+    font-size: 1em;
+    color: #555555; // Donkergrijs voor subtitel op witte achtergrond
+}
+*/
+
+main {
+    padding: 5px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--card-background);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+    opacity: 0.8;
+}
+
+.download-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.gallery-item:hover .download-overlay {
+    opacity: 1;
+}
+
+.download-icon {
+    color: white;
+    font-size: 2.5em;
+    text-shadow: 0 0 5px black;
+}
+
+/* Lightgallery custom download button */
+.lg-toolbar .lg-download {
+    background-color: var(--primary-color) !important;
+    color: var(--text-color-on-primary) !important;
+    border-radius: 4px;
+    margin: 5px;
+}
+.lg-toolbar .lg-download:hover {
+    background-color: var(--primary-color-darker) !important;
+}
+
+/* AANGEPAST: Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: var(--primary-color); /* Footer achtergrond blauw (#23a9e4) */
+    color: var(--text-color-on-primary);    /* Footer tekst wit (#ffffff) */
+    font-size: 0.9em;
+}
+
+/* Media Query voor grotere schermen */
+@media (min-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    header h1 { /* Pas de grootte van de header titel aan voor grotere schermen indien nodig */
+        font-size: 2.5em;
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Styling voor lightgallery zelf */
+.lg-backdrop {
+    background-color: rgba(20, 20, 25, 0.95);
+}
+.lg-toolbar {
+    background-color: rgba(35, 169, 228, 0.8); /* Blauwe toolbar achtergrond */
+}
+
+/* AANGEPAST: Lightgallery sub-HTML (tekst onder foto in lightbox) */
+.lg-sub-html {
+    background-color: var(--primary-color); /* Solide blauwe achtergrond (#23a9e4) */
+    /* OF background-color: rgba(35, 169, 228, 0.85); voor licht transparant blauw */
+    color: #ffffff !important;             /* Witte tekst, geforceerd */
+    padding: 10px 20px;
+    text-align: center; /* Optioneel: centreer de tekst */
+}
+.lg-sub-html h4 {
+    margin-top: 0;
+    margin-bottom: 8px; /* Iets meer ruimte */
+    color: #ffffff !important;             /* Witte tekst voor titel, geforceerd */
+    font-size: 1.1em;   /* Iets groter */
+}
+.lg-sub-html p { /* Als je <p> tags gebruikt in data-sub-html */
+    margin-bottom: 0;
+    font-size: 0.9em;
+    color: #ffffff !important;             /* Witte tekst voor paragraaf, geforceerd */
+}
+
+/* Navigatiepijlen in lightbox zelf (naast de foto) */
+/* De 'brute force test' bovenaan zal deze overschrijven als die actief is */
+.lg-actions .lg-next,
+.lg-actions .lg-prev {
+    background-color: transparent;
+}
+.lg-actions .lg-next:hover,
+.lg-actions .lg-prev:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* CSS VOOR WITTE TOOLBAR ITEMS (knoppen en teller in lightbox toolbar) */
+.lg-toolbar .lg-icon,
+.lg-toolbar .lg-counter {
+    color: #ffffff !important;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+.lg-toolbar .lg-icon:hover,
+.lg-toolbar .lg-counter:hover {
+    opacity: 1;
+}
+.lg-toolbar .lg-download .lg-icon {
+    color: #ffffff !important;
+}
+.lg-toolbar .lg-close.lg-icon,
+.lg-toolbar .lg-close:before,
+.lg-toolbar .lg-close:after {
+    color: #ffffff !important;
+    opacity: 0.85;
+}
+.lg-toolbar .lg-close:hover.lg-icon,
+.lg-toolbar .lg-close:hover:before,
+.lg-toolbar .lg-close:hover:after {
+    opacity: 1;
+}
+.lg-actions .lg-next .lg-icon,
+.lg-actions .lg-prev .lg-icon {
+    color: #ffffff !important;
+    opacity: 0.8;
+}
+.lg-actions .lg-next:hover .lg-icon,
+.lg-actions .lg-prev:hover .lg-icon {
+    opacity: 1;
+}
+
+/* Verberg Lightgallery vorige/volgende pijlen ALLEEN op mobiele schermen */
+/* Deze media query is voor de normale werking (pijlen weg op mobiel, zichtbaar op desktop) */
+/* De 'brute force test' bovenaan zal deze overschrijven als de schermen smal zijn. */
+@media (max-width: 767px) {
+    .lg-actions .lg-next,
+    .lg-actions .lg-prev {
+        display: none !important; /* Dit zou de 'brute force' test moeten versterken op mobiel */
+    }
+}
+
+/* Verwijderde sectie voor thumbnails in lightbox, tenzij je die specifiek wilt stylen */
+/*
+.lg-outer .lg-thumb-item {
+    border-color: #ffffff;
+}
+.lg-outer .lg-thumb-item.active {
+    border-color: var(--primary-color-lighter);
+}
+*/
+// --- END OF FILE style.css ---
