@@ -23,7 +23,7 @@ body {
 .overzicht-header {
     background-color: var(--primary-color);
     color: var(--text-color-on-primary);
-    padding: 20px; /* Start met een redelijke default padding */
+    padding: 5px; /* Start met een redelijke default padding */
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -36,8 +36,8 @@ body {
 .overzicht-main {
     max-width: 900px;
     /* Verwijder negatieve marge, begin met positieve of geen marge */
-    margin: 20px auto; /* Standaard marge voor desktop */
-    padding: 20px;     /* Standaard padding voor desktop */
+    margin: 10px auto; /* Standaard marge voor desktop */
+    padding: 0px;     /* Standaard padding voor desktop */
 }
 
 .intro-text {
@@ -91,7 +91,7 @@ body {
 
 .overzicht-footer {
     text-align: center;
-    padding: 15px 20px; /* Standaard padding voor desktop */
+    padding: 5px 5px; /* Standaard padding voor desktop */
     margin-top: 30px;  /* Standaard marge voor desktop */
     background-color: var(--primary-color-darker);
     color: var(--text-color-on-primary);
