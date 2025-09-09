@@ -160,6 +160,20 @@ footer {
     color: var(--text-color-on-primary);    /* Footer tekst wit (#ffffff) */
     font-size: 0.9em;
 }
+@media (max-width: 767px) {
+    footer {
+        padding: 3px 3px !important;
+        margin-top: 5px !important;
+        font-size: 0.8em !important;
+    }
+}
+@media (max-width: 767px) {
+    body.lg-show footer {
+        display: none !important;
+    }
+}
+
+
 
 /* Media Query voor grotere schermen */
 @media (min-width: 600px) {
