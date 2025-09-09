@@ -64,4 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error("FOUT: De HTML container voor de galerij (een div met id='lightgallery') is niet gevonden in je index.html.");
         }
     }
+	setTimeout(() => {
+    window.dispatchEvent(new Event('resize'));
+}, 200);
+
 });
