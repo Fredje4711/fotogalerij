@@ -1,50 +1,40 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mijn Foto Gallerij</title>
-
-    <!-- Lightgallery CSS -->
-    <link rel="stylesheet" href="lightgallery/css/lightgallery-bundle.min.css">
-
-    <!-- Optioneel: Als de bundle niet alle plugin CSS bevat en je merkt problemen,
-         kun je proberen deze weer te activeren. Controleer je lightgallery/css map.
-    <link rel="stylesheet" href="lightgallery/css/lg-thumbnail.css">
-    <link rel="stylesheet" href="lightgallery/css/lg-zoom.css">
-    -->
-
-    <!-- Jouw eigen stylesheet - MET CACHE BUSTING PARAMETER -->
-    <link rel="stylesheet" href="style.css?v=4"> <!-- <--- WIJZIGING HIER -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fotogalerij - Wandeling Terhills</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
 </head>
 <body>
+
   <div id="wrapper">
     <header>
       <h1>Wandeling Terhills</h1>
     </header>
+
     <main>
-      <div id="lightgallery" class="gallery"></div>
+      <div class="gallery" id="lightgallery">
+        <!-- Afbeeldingen worden hier via JavaScript geladen -->
+      </div>
     </main>
+
     <footer>
-      <p>© 2025 Diabetes Liga Midden-Limburg</p> 
+      &copy; 2025 Diabetes Liga Midden-Limburg
     </footer>
-  </div>
 
-    <!-- Scripts worden nu in een specifieke volgorde geladen -->
-    <!-- EERST gallery-data.js, zodat de 'photoGalleryData' array beschikbaar is -->
-    <script src="gallery-data.js"></script>
+    <!-- 👇 Toegevoegde padding om scroll te forceren op mobiel -->
+    <div id="scroll-fix"></div>
 
-    <!-- DAN de Lightgallery core en plugins -->
-    <script src="lightgallery/js/lightgallery.min.js"></script>
-    <script src="lightgallery/plugins/lg-thumbnail.min.js"></script>
-    <script src="lightgallery/plugins/lg-zoom.min.js"></script>
-    <!-- <script src="lightgallery/plugins/lg-medium-zoom.min.js"></script> --> <!-- Als je deze plugin gebruikt -->
+  </div> <!-- einde #wrapper -->
 
-    <!-- ALS LAATSTE jouw eigen script.js dat de data gebruikt en Lightgallery initialiseert -->
-    <script src="script.js"></script>
-	
-<!-- Dummy blokje voor scroll-fix op mobiel -->
-<div id="scroll-fix"></div>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+  <script src="gallery-data.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
