@@ -347,19 +347,21 @@ footer {
     overflow-y: auto !important;
   }
 
-  /* Houd voldoende ruimte voor thumbnails */
+  /* Houd thumbnails goed zichtbaar */
   .lg-outer .lg-thumb-outer {
+    height: auto !important;
     min-height: 80px !important;
-    max-height: 90px !important;
+    max-height: 120px !important;
     box-sizing: border-box;
+    overflow: visible !important;
+    padding-bottom: 10px !important; /* Extra ruimte onderaan */
   }
 
-  /* Verwijder deze, want die verstoort de layout */
-  /* .lg-outer {
-    padding-bottom: 90px !important;
-  } */
+  /* Verwijder conflicterende padding */
+  .lg-outer {
+    padding-bottom: 0 !important;
+  }
 
-  /* Houd de backdrop binnen het zichtbare scherm */
   .lg-backdrop {
     height: 100svh !important;
   }
