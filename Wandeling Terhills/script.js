@@ -13,16 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Loop door elk foto-object in de 'photoGalleryData' array
         photoGalleryData.forEach(photo => {
             // Bouw de 'data-sub-html' string.
-            // De paragraaf <p> wordt alleen toegevoegd als photo.description een waarde heeft.
             let subHtmlContent = `<h4>${photo.title}</h4>`;
             if (photo.description && photo.description.trim() !== "") {
                 subHtmlContent += `<p>${photo.description}</p>`;
             }
 
-            // Bouw de HTML voor één galerij-item.
-            // Let op het gebruik van template literals (backticks ``) voor makkelijke string interpolatie.
-            // Dubbele aanhalingstekens binnen de subHtmlContent worden vervangen door "
-            // om problemen met het data-sub-html attribuut te voorkomen.
             const galleryItemHTML = `
                 <a class="gallery-item"
                    href="${photo.full}"
@@ -33,39 +28,37 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </a>
             `;
-            // Voeg het zojuist gemaakte HTML-item toe aan het einde van de galleryContainer.
             galleryContainer.insertAdjacentHTML('beforeend', galleryItemHTML);
         });
 
-        // NU alle HTML-items zijn toegevoegd aan de DOM, initialiseren we Lightgallery.
+        // Initialiseer LightGallery
         lightGallery(galleryContainer, {
-            plugins: [lgZoom, lgThumbnail], // Zorg dat lgZoom en lgThumbnail globaal beschikbaar zijn
-                                            // (geladen via <script> tags in index.html)
-            selector: '.gallery-item',      // Lightgallery zoekt naar elementen met deze class
-            speed: 500,                     // Animatie snelheid
-            download: true,                 // Toon download knop in lightbox toolbar
-            getCaptionFromTitleOrAlt: false,// We gebruiken onze eigen data-sub-html
-            controls: false,                 // Toon desktop navigatiepijlen (links/rechts naast foto).
-                                            // Zet op false als je ze ook op desktop weg wilt (media query in CSS regelt mobiel).
+            plugins: [lgZoom, lgThumbnail],
+            selector: '.gallery-item',
+            speed: 500,
+            download: true,
+            getCaptionFromTitleOrAlt: false,
+            controls: false,
             mobileSettings: {
-               controls: true,              // Toon de toolbar bovenaan op mobiel
-               showCloseIcon: true,         // Toon het sluitkruisje op mobiel
-               download: true               // Toon de downloadknop op mobiel
+                controls: true,
+                showCloseIcon: true,
+                download: true
+            },
+            onAfterOpen: () => {
+                // Belangrijk: forceer een layout-update op mobiel zodat alles zichtbaar wordt
+                setTimeout(() => {
+                    window.dispatchEvent(new Event('resize'));
+                }, 300);
             }
-            // Voeg hier eventuele andere Lightgallery configuratieopties toe die je had of wilt.
         });
 
     } else {
         // Foutmeldingen voor als er iets essentieels mist.
         if (typeof photoGalleryData === 'undefined') {
-            console.error("FOUT: De 'photoGalleryData' array is niet gevonden. Zorg ervoor dat 'gallery-data.js' correct is geladen vóór dit script, of dat de data array correct is gedefinieerd.");
+            console.error("FOUT: De 'photoGalleryData' array is niet gevonden. Zorg ervoor dat 'gallery-data.js' correct is geladen vóór dit script.");
         }
         if (!galleryContainer) {
-            console.error("FOUT: De HTML container voor de galerij (een div met id='lightgallery') is niet gevonden in je index.html.");
+            console.error("FOUT: De HTML container voor de galerij (id='lightgallery') is niet gevonden in index.html.");
         }
     }
-	setTimeout(() => {
-    window.dispatchEvent(new Event('resize'));
-}, 200);
-
 });
