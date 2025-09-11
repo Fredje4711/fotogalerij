@@ -332,6 +332,36 @@ footer {
     height: 60px;
   }
 }
+@media (max-width: 767px) {
+  html, body {
+    min-height: 100svh !important;
+    height: auto !important;
+    overflow-y: auto !important;
+  }
+
+  #wrapper {
+    min-height: 100svh !important;
+  }
+
+  body.lg-on {
+    overflow-y: auto !important;
+  }
+
+  .lg-outer .lg-thumb-outer {
+    min-height: 80px !important;   /* ruimte voor thumbnails */
+    box-sizing: border-box;
+    padding-bottom: 10px;
+  }
+
+  .lg-outer {
+    padding-bottom: 90px !important; /* ruimte voor thumbnails onderaan */
+  }
+
+  .lg-backdrop {
+    height: 100svh !important;
+  }
+}
+
 
 */
 // --- END OF FILE style.css ---
