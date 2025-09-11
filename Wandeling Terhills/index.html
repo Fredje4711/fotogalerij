@@ -2,14 +2,10 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wandeling Terhills</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- LightGallery CSS (lokaal) -->
   <link rel="stylesheet" href="lightgallery/css/lightgallery-bundle.min.css">
-  <link rel="stylesheet" href="lightgallery/css/lg-thumbnail.css">
-  <link rel="stylesheet" href="lightgallery/css/lg-zoom.css">
 </head>
 <body>
 
@@ -20,7 +16,7 @@
 
     <main>
       <div class="gallery" id="lightgallery">
-        <!-- Afbeeldingen worden via JS geladen -->
+        <!-- Afbeeldingen worden hier via JavaScript geladen -->
       </div>
     </main>
 
@@ -28,36 +24,25 @@
       &copy; 2025 Diabetes Liga Midden-Limburg
     </footer>
 
-    <!-- Scroll fix zodat footer zichtbaar wordt op mobiel -->
+    <!-- 👇 Toegevoegde padding om scroll te forceren op mobiel -->
     <div id="scroll-fix"></div>
-  </div>
 
-  <!-- Scripts (lokaal) -->
-  <script src="gallery-data.js"></script>
+  </div> <!-- einde #wrapper -->
 
-  <!-- LightGallery JS lokaal -->
+  <!-- Scripts -->
   <script src="lightgallery/js/lightgallery.min.js"></script>
-  <script src="lightgallery/plugins/lg-zoom.min.js"></script>
   <script src="lightgallery/plugins/lg-thumbnail.min.js"></script>
-
-  <!-- Jouw script -->
+  <script src="lightgallery/plugins/lg-zoom.min.js"></script>
+  <script src="gallery-data.js"></script>
   <script src="script.js"></script>
 
-  <!-- Forceren van layoutupdate (footerfix op mobiel) -->
   <script>
+    // Deze scroll-truc hielp in jouw eerdere test om layout te forceren
     window.addEventListener('load', function () {
-      window.scrollBy(0, 1);
+      window.scrollBy(0, 1);   // forceer layout update
       window.scrollBy(0, -1);
     });
   </script>
-  <script>
-  window.addEventListener('load', function () {
-    setTimeout(() => {
-      window.dispatchEvent(new Event('resize'));
-    }, 200);
-  });
-</script>
-
 
 </body>
 </html>

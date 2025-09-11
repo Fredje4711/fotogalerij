@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function() {
     const galleryContainer = document.getElementById('lightgallery');
 
@@ -6,13 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // en of de 'galleryContainer' (de div met id="lightgallery") in de HTML aanwezig is.
     if (typeof photoGalleryData !== 'undefined' && galleryContainer) {
 
-        // Optioneel: Maak de container leeg voor het geval er (per ongeluk)
-        // nog oude statische HTML-items in stonden.
+        // Maak de container leeg (voor als er nog statische HTML-items stonden).
         galleryContainer.innerHTML = '';
 
         // Loop door elk foto-object in de 'photoGalleryData' array
         photoGalleryData.forEach(photo => {
-            // Bouw de 'data-sub-html' string.
+            // Bouw de data-sub-html string.
             let subHtmlContent = `<h4>${photo.title}</h4>`;
             if (photo.description && photo.description.trim() !== "") {
                 subHtmlContent += `<p>${photo.description}</p>`;
@@ -43,22 +41,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 controls: true,
                 showCloseIcon: true,
                 download: true
-            },
-            onAfterOpen: () => {
-                // Belangrijk: forceer een layout-update op mobiel zodat alles zichtbaar wordt
-                setTimeout(() => {
-                    window.dispatchEvent(new Event('resize'));
-                }, 300);
             }
         });
 
     } else {
-        // Foutmeldingen voor als er iets essentieels mist.
+        // Foutmeldingen
         if (typeof photoGalleryData === 'undefined') {
             console.error("FOUT: De 'photoGalleryData' array is niet gevonden. Zorg ervoor dat 'gallery-data.js' correct is geladen vóór dit script.");
         }
         if (!galleryContainer) {
-            console.error("FOUT: De HTML container voor de galerij (id='lightgallery') is niet gevonden in index.html.");
+            console.error("FOUT: De HTML container voor de galerij (div met id='lightgallery') is niet gevonden in je index.html.");
         }
     }
+
+    // Forceer hertekening layout na korte tijd
+    setTimeout(() => {
+        window.dispatchEvent(new Event('resize'));
+    }, 200);
 });
