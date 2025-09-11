@@ -2,11 +2,12 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fotogalerij - Wandeling Terhills</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wandeling Terhills</title>
+  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.min.css">
 </head>
+
 <body>
 
   <div id="wrapper">
@@ -24,25 +25,34 @@
       &copy; 2025 Diabetes Liga Midden-Limburg
     </footer>
 
-    <!-- 👇 Toegevoegde padding om scroll te forceren op mobiel -->
+    <!-- Extra onzichtbaar blokje om scrollproblemen op mobiel te helpen -->
     <div id="scroll-fix"></div>
+  </div>
 
-  </div> <!-- einde #wrapper -->
-
-  <!-- Scripts -->
+  <!-- Lightgallery scripts -->
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
-  <script src="gallery-data.js"></script>
-  <script src="script.js"></script>
-  
-  <script>
-  window.addEventListener('load', function () {
-    window.scrollBy(0, 1);   // forceer layout update
-    window.scrollBy(0, -1);
-  });
-</script>
 
+  <!-- Data voor je fotogalerij -->
+  <script src="gallery-data.js"></script>
+
+  <!-- Scroll-correctie script -->
+  <script>
+    window.addEventListener('load', function () {
+      window.scrollBy(0, 1);   // Forceer herberekening van scrollpositie
+      window.scrollBy(0, -1);
+
+      // Extra fix: zorg dat #scroll-fix altijd zichtbaar blijft
+      const fix = document.getElementById('scroll-fix');
+      if (fix) {
+        fix.style.minHeight = '1px';
+      }
+    });
+  </script>
+
+  <!-- Jouw script als laatste -->
+  <script src="script.js"></script>
 
 </body>
 </html>
